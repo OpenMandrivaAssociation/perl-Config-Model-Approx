@@ -1,15 +1,13 @@
 %define upstream_name    Config-Model-Approx
-%define upstream_version 1.003
-
 Name:       perl-%{upstream_name}
-Version:    %perl_convert_version %{upstream_version}
+Version:    1.003
 Release:    %mkrel 1
 
 Summary:    Approx configuration file editor
 License:    GPL+ or Artistic
 Group:      Development/Perl
-Url:        https://search.cpan.org/dist/%{upstream_name}
-Source0:    http://www.cpan.org/modules/by-module/Config/%{upstream_name}-%{upstream_version}.tar.gz
+Url:        https://metacpan.org/dist/%{upstream_name}
+Source0:    http://www.cpan.org/modules/by-module/Config/%{upstream_name}-%{version}.tar.gz
 
 BuildRequires: perl(Config::Model)
 BuildRequires: perl(Config::Model::CursesUI)
@@ -31,7 +29,7 @@ Once this module is installed, you can run:
 The Perl API is documented in Config::Model and mostly in Config::Model::Node.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version} 
+%setup -q -n %{upstream_name}-%{version} 
 
 %build
 %{__perl} Build.PL installdirs=vendor
